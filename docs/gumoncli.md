@@ -29,7 +29,6 @@
 4. เก็บข้อมูล service ที่มีอยู่ใน peoject (ชื่อ service และ image name ของ service)
 
 ```
-
     projectName : gumonExample
     databaseURL : mongodb:gumon:1234/first_collection
     kafkaProductURL : 
@@ -64,6 +63,8 @@
 เป็นคำสั่งในการ push project ขึ้น docker และทำการ run container ทั้งหมด
 
     > gumon up [service_name]
+
+*`gumon up` only, ทุก service จะถูก push ขึ้นไป
 
 ## down
  เป็นคำสั่งหยุดการทำงาน container ที่ต้องการใน docker
