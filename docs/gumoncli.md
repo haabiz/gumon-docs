@@ -24,26 +24,25 @@
 การทำงาน
 
 1. ตั้งค่า project ผ่าน command line
-2. สร้าง file .gumon ขึ้นมา
+2. สร้าง file gumon.yml ขึ้นมา
 3. เก็บข้อมูลการตั้งค่า project
 4. เก็บข้อมูล service ที่มีอยู่ใน peoject (ชื่อ service และ image name ของ service)
 
 ```
-{
-    "projectName" : "gumonExample",
-    "databaseURL" : "mongodb:gumon:1234/first_collection",
-    "kafkaProductURL" : "",
-    "kafkaConsumeURL" : "",
-    "redisURL" : "",
-    "service": {
-        "core" : "CORE_SERVICE@v1.0.0",
-        "application" : "APPLICATION_SERVICE@v1.0.0",
-        "user" : "USER_SERVICE@v1.0.0",
-        "authorization" : "AUTHORIZATION_SERVICE@v1.0.0",
-        "acl" : "ACL_SERVICE@v1.0.0",
-        "label" : "LABEL_SERVICE@v1.0.0",
-    }
-}
+
+    projectName : gumonExample
+    databaseURL : mongodb:gumon:1234/first_collection
+    kafkaProductURL : 
+    kafkaConsumeURL : 
+    redisURL : 
+    service: 
+        core : CORE_SERVICE@v1.0.0
+        application : APPLICATION_SERVICE@v1.0.0
+        user : USER_SERVICE@v1.0.0
+        authorization : AUTHORIZATION_SERVICE@v1.0.0
+        acl : ACL_SERVICE@v1.0.0
+        label : LABEL_SERVICE@v1.0.0
+
 ```
 
 ---
@@ -53,6 +52,7 @@
     > gumon config [service_name]
 
 หลังจากพิมพ์คำสั่งระบบจะไปหาไฟล์ตั้งค่า service ที่ต้องการและเปิดหน้า แก้ไขข้อมูล
+
 ---
 ## list
 แสดงรายการ service ทั้งหมดใน project
