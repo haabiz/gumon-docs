@@ -1,3 +1,6 @@
 site_name: Gumon Docs
+nav:
+  - Home: index.md
+  - Gumon cli: gumoncli.md
 theme:
   name: material
