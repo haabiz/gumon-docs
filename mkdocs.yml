@@ -2,5 +2,6 @@ site_name: Gumon Docs
 nav:
   - Home: index.md
   - Gumon cli: gumoncli.md
+  - Application Service: applicationService.md
 theme:
   name: material
