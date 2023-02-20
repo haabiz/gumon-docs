@@ -229,5 +229,122 @@ Response
 
 ## kafka consum Reference
 
+### Application
+consum ข้อมูล application 
+    
+    topic: sync-application
+
+---
+
+#### add Application
+
+รับข้อมูล Application เมื่อมีการสร้าง Application ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
+| attribute     | object    |   |
+
+---
+
+#### update Application
+
+รับข้อมูล Application เมื่อมีการ update Application
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
+| attribute     | object    |   |
+
+---
+
+#### Delete Application
+
+รับข้อมูล Application เมื่อมีการ DELETE Application 
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+
+---
+
+#### refreshData
+
+เมื่อมีคำสั่งนี้มา ให้ทำการส่งข้อมูลของตัวเอง อัตเดตขึ้น kafka
+
+    Action: REFRESHDATA
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+
+---
+
 ## kafka produc Reference
 
+### Service
+
+produc ข้อมูล application 
+    
+    topic: sync-service
+
+---
+
+#### add Service
+
+ส่งข้อมูล Service เมื่่อมีการสร้าง Service ใหม่
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+| registerDate     | Date    |   |
+
+---
+
+#### update Service
+
+ส่งข้อมูล Service เมื่่อมีการแก้ไขService ใหม่
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+| registerDate     | Date    |   |
+
+---
+
+#### Delete Service
+
+ส่งข้อมูล Service เมื่่อมีการลบ Service
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+
+---
