@@ -136,6 +136,7 @@
     > gumon install [service_name/image] [version]
 
 การทำงาน
+
 1. ส่งข้อมูลไปที่ gumon store ว่ามี service นี้และ version ที่ระบุไว้หรือไม่
 2. ติดตั้ง service ตาม version ที่ได้ระบุไว้
 
