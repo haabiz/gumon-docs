@@ -294,3 +294,57 @@ consum ข้อมูล application
 
 ## kafka produc Reference
 
+### Service
+
+produc ข้อมูล application 
+    
+    topic: sync-service
+
+---
+
+#### add Service
+
+ส่งข้อมูล Service เมื่่อมีการสร้าง Service ใหม่
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+| registerDate     | Date    |   |
+
+---
+
+#### update Service
+
+ส่งข้อมูล Service เมื่่อมีการแก้ไขService ใหม่
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+| registerDate     | Date    |   |
+
+---
+
+#### Delete Service
+
+ส่งข้อมูล Service เมื่่อมีการลบ Service
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| serviceKey     | string    | serviceKey  |
+| name     | string    | name  |
+| version     | String    |   |
+
+---
