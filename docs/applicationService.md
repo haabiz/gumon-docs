@@ -167,7 +167,7 @@ DeleteStatus
 
 ---
 
-##### Create Theme
+#### Create Theme
 
 API สำหรับการสร้าง Theme ของ Application
 
@@ -252,6 +252,7 @@ DeleteStatus
 <br>
 
 ## CLI Reference
+---
 
 ### Create Application
 
@@ -267,6 +268,8 @@ command สำหรับการสร้าง Application
 application name : [your application]
 appKey : [application Key]
 ```
+<br>
+<br>
 
 ## Kafka consume Reference
 
