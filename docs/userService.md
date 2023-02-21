@@ -31,6 +31,7 @@ Response
 - user[]
 
 userSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | _id     | string    | id ที่ใช้อ้างอิง  |
@@ -45,18 +46,20 @@ userSchema
 | attribute     | object    |   |
 | setting     | object    |  |
 
-
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
+
 ---
 
 #### Get User By ID
@@ -73,6 +76,7 @@ Input Fields
 Response
 
 userSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | _id     | string    | id ที่ใช้อ้างอิง  |
@@ -88,12 +92,14 @@ userSchema
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -111,6 +117,7 @@ Input Fields
 Response
 
 userSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | _id     | string    | id ที่ใช้อ้างอิง  |
@@ -126,12 +133,14 @@ userSchema
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -166,12 +175,14 @@ Input Fields
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -193,12 +204,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -228,12 +241,14 @@ Input Fields
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -255,12 +270,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -297,12 +314,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -339,12 +358,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -376,12 +397,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -411,12 +434,14 @@ Response
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -521,12 +546,14 @@ produc ข้อมูล user
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
@@ -555,12 +582,14 @@ PhoneSchema
 | setting     | object    |  |
 
 EmailSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
 | verifyStatus     | string    | VERIFIED - NOT_VERIFY |
 
 PhoneSchema
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | value     | string    | value  |
