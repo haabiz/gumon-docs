@@ -195,7 +195,7 @@ Response
 
 API สำหรับการลบ Theme ตาม ID ที่ส่งมา
 
-    API name : deleteAllTheme
+    API name : deleteTheme
 
 Input Fields
 
