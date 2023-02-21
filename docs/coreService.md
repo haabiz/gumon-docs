@@ -275,7 +275,7 @@ consum ข้อมูล application
 
 ---
 
-#### add Application
+#### Add Application
 
 รับข้อมูล Application เมื่อมีการสร้าง Application ใหม่ขึ้นมาในระบบ
 
@@ -290,7 +290,7 @@ consum ข้อมูล application
 
 ---
 
-#### update Application
+#### Update Application
 
 รับข้อมูล Application เมื่อมีการ update Application
 
@@ -318,7 +318,7 @@ consum ข้อมูล application
 
 ---
 
-#### refreshData
+#### RefreshData
 
 เมื่อมีคำสั่งนี้มา ให้ทำการส่งข้อมูลของตัวเอง อัตเดตขึ้น kafka
 
@@ -331,7 +331,7 @@ consum ข้อมูล application
 
 ---
 
-## kafka produc Reference
+## Kafka Produc Reference
 
 ### Service
 
@@ -341,7 +341,7 @@ produc ข้อมูล application
 
 ---
 
-#### add Service
+#### Add Service
 
 ส่งข้อมูล Service เมื่่อมีการสร้าง Service ใหม่
 
@@ -357,7 +357,7 @@ produc ข้อมูล application
 
 ---
 
-#### update Service
+#### Update Service
 
 ส่งข้อมูล Service เมื่่อมีการแก้ไขService ใหม่
 
