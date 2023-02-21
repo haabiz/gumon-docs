@@ -195,7 +195,80 @@ Response
 
 API สำหรับการลบ Theme ตาม ID ที่ส่งมา
 
-    API name : deleteAllTheme
+    API name : deleteTheme
+
+Input Fields
+
+- \_id : String[]!
+
+Response
+
+- status : ENUM_STATUS (SUCCESS, ERROR)
+- \_id : ID[]
+
+---
+
+### Add Service to Application
+
+API สำหรับการเพิ่ม Service เข้าสู่ Application
+
+    API name : addService
+
+Input Fields
+
+- appID : String!
+- serviceID : String!
+
+Response
+
+- \_id : ID
+- appKey : String
+- name : String
+- services : Services[]
+
+---
+
+### Get Service in Application
+
+API สำหรับการเรียกดูข้อมูล Service ของ Application
+
+    API name : getAppServices
+
+Input Fields
+
+- appId : String!
+
+Response
+
+- Services[]
+  - \_id : ID
+  - appID : String
+  - name : String
+
+---
+
+### Remove all Service in Application
+
+API สำหรับการลบ Service ทั้งหมดของ Application
+
+    API name : removeAllService
+
+Input Fields
+
+- appID : String!
+
+Response
+
+- status : ENUM_STATUS (SUCCESS, ERROR)
+- appID : ID
+
+---
+
+### Remove Service
+
+API สำหรับการลบ Service ตาม ID ที่ส่งมา
+
+    API name : removeService
 
 Input Fields
 
