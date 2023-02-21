@@ -3,7 +3,9 @@
 Service สำหรับจัดการ Application ทั้งเก็บรวบรวมข้อมูลต่างๆของ application รวมไปถึงการตั้งค่าต่างๆของ application
 
 - [API Reference](#api-reference)
-- [Function](#function)
+- [CLI Reference](#cli-reference)
+- [kafka consume Reference](#kafka-consume-reference)
+- [kafka produce Reference](#kafka-produce-reference)
 
 ---
 
@@ -14,7 +16,92 @@ Service สำหรับจัดการ Application ทั้งเก็�
 ---
 <br>
 
-### Create Application
+### Query
+
+เป็น API ที่ใช้สำหรับการ Query ข้อมูลออกมา
+
+#### Get Application
+
+API สำหรับการเรียกข้อมูล Applications
+
+    API name : getApplications
+
+Response : Applications[]
+
+Application
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
+
+---
+
+#### Get Application By ID
+
+API สำหรับการเรียกข้อมูล Application โดยอ้างอิงจาก ID
+
+    API name : getApplicationByID
+
+Input Fields
+
+- \_id : String!
+
+Response : Application
+
+Application
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
+
+---
+
+#### Get Theme
+
+API สำหรับการเรียกดูข้อมูล Theme ของ Application
+
+    API name : getThemes
+
+
+Response: Theme[]
+
+Theme
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appID     | string    | ID ของ Application  |
+| name     | string    | ชื่อ theme  |
+
+---
+
+#### Get Theme By ID
+
+API สำหรับการเรียกดูข้อมูล Theme ของ Application โดยอ้างอิงจาก ID
+
+    API name : getThemeByID
+
+Input Fields
+
+- \_id : String!
+
+Response: Theme
+
+Theme
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appID     | string    | ID ของ Application  |
+| name     | string    | ชื่อ theme  |
+
+---
+
+### Mutation
+
+เป็น API ที่ใช้สำหรับการแก้ไขข้อมูล
+
+#### Create Application
 
 API สำหรับการสร้าง Application
 
@@ -25,48 +112,20 @@ Input Fields
 - appKey : String!
 - name : String
 
-Response
+Response: Application
 
-- \_id : ID
-- appKey : String
-- name : String
-
----
-
-### Get Application
-
-API สำหรับการเรียกข้อมูล Applications
-
-    API name : getApplications
-
-Response
-
-- applications[]
-  - \_id : ID
-  - name : String
-  - appKey : String
+Application
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
 
 ---
 
-### Get Application By ID
 
-API สำหรับการเรียกข้อมูล Application โดยอ้างอิงจาก ID
 
-    API name : getApplicationByID
-
-Input Fields
-
-- \_id : String!
-
-Response
-
-- \_id : ID
-- appKey : String
-- name : String
-
----
-
-### Update Application
+#### Update Application
 
 API สำหรับการแก้ไขข้อมูล Application โดยอ้างอิงจาก ID ที่ส่งมา
 
@@ -77,15 +136,18 @@ Input Fields
 
 - \_id : String!
 
-Response
+Response: Application
 
-- \_id : ID
-- appKey : String
-- name : String
+Application
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | string    | ชื่อ app  |
 
 ---
 
-### Delete Application
+#### Delete Application
 
 API สำหรับการลบ Application โดยอ้างอิงจาก ID ที่ส่งมาทั้งหมด
 
@@ -95,14 +157,17 @@ Input Fields
 
 - \_id : String[]!
 
-Response
+Response : DeleteStatus
 
-- status : ENUM_STATUS (SUCCESS, ERROR)
-- \_id : ID[]
+DeleteStatus
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, ERROR  |
+| _id     | string[]    | list ของ ID  |
 
 ---
 
-### Create Theme
+##### Create Theme
 
 API สำหรับการสร้าง Theme ของ Application
 
@@ -112,50 +177,18 @@ Input Fields
 
 - appID : String!
 
-Response
+Response: Theme
 
-- \_id : ID
-- appID: ID
-- name : String
-
----
-
-### Get Theme
-
-API สำหรับการเรียกดูข้อมูล Theme ของ Application
-
-    API name : getThemes
-
-
-Response
-
-- themes[]
-  - \_id : ID
-  - appID : String
-  - name : String
+Theme
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appID     | string    | ID ของ Application  |
+| name     | string    | ชื่อ theme  |
 
 ---
 
-### Get Theme By ID
-
-API สำหรับการเรียกดูข้อมูล Theme ของ Application โดยอ้างอิงจาก ID
-
-    API name : getThemeByID
-
-Input Fields
-
-- \_id : String!
-
-Response
-
-- themes[]
-  - \_id : ID
-  - appID : String
-  - name : String
-
----
-
-### Update Theme
+#### Update Theme
 
 API สำหรับการแก้ไขข้อมูล Theme ของ Application
 
@@ -165,15 +198,18 @@ Input Fields
 
 - \_id : String!
 
-Response
+Response: Theme
 
-- \_id : ID
-- appID: ID
-- name : String
+Theme
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appID     | string    | ID ของ Application  |
+| name     | string    | ชื่อ theme  |
 
 ---
 
-### Delete all Theme in Application
+#### Delete all Theme in Application
 
 API สำหรับการลบ Theme ทั้งหมดของ Application
 
@@ -183,15 +219,17 @@ Input Fields
 
 - appID : String!
 
-Response
+Response : DeleteStatus
 
-- status : ENUM_STATUS (SUCCESS, ERROR)
-- appID : ID
-- \_id : ID[]
+DeleteStatus
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, ERROR  |
+| _id     | string[]    | list ของ ID  |
 
 ---
 
-### Delete Theme
+#### Delete Theme
 
 API สำหรับการลบ Theme ตาม ID ที่ส่งมา
 
@@ -201,17 +239,60 @@ Input Fields
 
 - \_id : String[]!
 
-Response
+Response : DeleteStatus
 
-- status : ENUM_STATUS (SUCCESS, ERROR)
-- \_id : ID[]
+DeleteStatus
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, ERROR  |
+| _id     | string[]    | list ของ ID  |
 
----
 
-## FUNCTION
+<br>
+<br>
+
+## CLI Reference
 
 ### Create Application
 
-    createApplication()
+command สำหรับการสร้าง Application
+
+    > gumon exec applicationService create [applicationName]
+
+หรือหลังจาก execute เข้าไปใน service แล้ว
+
+    > create
+
+```
+application name : [your application]
+appKey : [application Key]
+```
+
+## Kafka consume Reference
 
 ---
+
+<br>
+<br>
+
+## Kafka produce Reference
+---
+
+produc ข้อมูล application 
+    
+    topic: sync-application
+
+### ACTION
+
+#### update Service
+
+ส่งข้อมูล Application เมื่่อมีการ update ข้อมูลของ Application
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | serviceKey  |
+| name     | string    | name  |
+
