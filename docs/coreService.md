@@ -29,12 +29,15 @@ API สำหรับการเรียกข้อมูล Service ที�
 Response
 
 - services[]
-  - \_id : ID
-  - name : String
-  - serviceKey : String
-  - version : String
-  - registerDate : Date
 
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 ---
 
 #### Get Service By ID
@@ -44,15 +47,19 @@ API สำหรับการเรียกข้อมูล Service โด�
 
 Input Fields
 
-- \_id : String!
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 
 ---
 
@@ -64,15 +71,19 @@ API สำหรับการเรียกข้อมูล Service โด�
 
 Input Fields
 
-- ServiceKey : String!
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| ServiceKey     | String!    | id ที่ใช้อ้างอิง  |
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 
 ---
 
@@ -84,16 +95,20 @@ API สำหรับการเรียกข้อมูล Setting ขอ�
 
 Input Fields
 
-- ServiceKey : String!
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| ServiceKey     | String!    | id ที่ใช้อ้างอิง  |
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
-- Setting : JSON
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
+| Setting     | JSON    | |
 
 ---
 
@@ -105,17 +120,21 @@ API สำหรับการเรียกข้อมูล Health Check �
 
 Input Fields
 
-- ServiceKey : String
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| ServiceKey     | String!    | id ที่ใช้อ้างอิง  |
 
 Response
 
 - services[]
-  - \_id : ID
-  - name : String
-  - serviceKey : String
-  - version : String
-  - registerDate : Date
-  - lastHealthCheck : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
+| lastHealthCheck     | Date    | |
 
 ---
 
@@ -134,17 +153,21 @@ API สำหรับการสร้าง Service ใหม่ในระ�
 
 Input Fields
 
-- name : String
-- serviceKey : String
-- version : String
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| name     | String    | |
+| serviceKey     | String    |  |
+| version     | String    | |
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 
 ---
 
@@ -156,17 +179,22 @@ API สำหรับการเปลียนversion ของ serviceName �
 
 Input Fields
 
-- name : String
-- serviceKey : String
-- version : String
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| name     | String    | |
+| serviceKey     | String    |  |
+| version     | String    | |
+
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 
 ---
 
@@ -178,17 +206,22 @@ API สำหรับการนำ service นั้นออกจากร�
 
 Input Fields
 
-- name : String
-- serviceKey : String
-- version : String
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| name     | String    | |
+| serviceKey     | String    |  |
+| version     | String    | |
+
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
 
 ---
 
@@ -203,11 +236,14 @@ command สำหรับการนำ service นั้นเข้าสู
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
+
 
 ---
 
@@ -219,11 +255,14 @@ command สำหรับการนำ service นั้นออกจาก
 
 Response
 
-- \_id : ID
-- name : String
-- serviceKey : String
-- version : String
-- registerDate : Date
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | ID    | id ที่ใช้อ้างอิง  |
+| name     | String    | ชื่อ Service  |
+| serviceKey     | String    | serviceKey  |
+| version     | String    | 1.1.1  |
+| registerDate     | Date    | |
+
 
 ---
 
