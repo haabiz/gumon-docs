@@ -247,7 +247,6 @@ consum ข้อมูล application
 | _id     | string    | id ที่ใช้อ้างอิง  |
 | appKey     | string    | appKey  |
 | name     | string    | ชื่อ app  |
-| attribute     | object    |   |
 
 ---
 
@@ -262,7 +261,6 @@ consum ข้อมูล application
 | _id     | string    | id ที่ใช้อ้างอิง  |
 | appKey     | string    | appKey  |
 | name     | string    | ชื่อ app  |
-| attribute     | object    |   |
 
 ---
 
@@ -283,7 +281,7 @@ consum ข้อมูล application
 
 เมื่อมีคำสั่งนี้มา ให้ทำการส่งข้อมูลของตัวเอง อัตเดตขึ้น kafka
 
-    Action: REFRESHDATA
+    Action: REFRESH_DATA
 
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
