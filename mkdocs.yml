@@ -4,5 +4,6 @@ nav:
   - Gumon cli: gumoncli.md
   - Core Service: coreService.md
   - Application Service: applicationService.md
+  - User Service: userService.md
 theme:
   name: material
