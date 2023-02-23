@@ -231,7 +231,6 @@ consume คำสั่งที่ต้องการข้อมูลขอ
 | ------  | ------    | ------       |
 | appKey     | string    | appKey  |
 | serviceKey     | string    | serviceKey  |
-| publicKey | string | publicKey |
 
 ---
 
