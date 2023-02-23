@@ -296,6 +296,6 @@ produc ข้อมูล application
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | _id     | string    | id ที่ใช้อ้างอิง  |
-| appKey     | string    | serviceKey  |
+| appKey     | string    | appKey  |
 | name     | string    | name  |
 

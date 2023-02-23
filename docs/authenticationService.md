@@ -215,13 +215,100 @@ LOGINED
 
 ## Kafka consume Reference
 
+### Authrntication
+consume คำสั่งที่ต้องการข้อมูลของ Authentication Service
+    
+    topic: sync-auth
+
+### ACTION
+#### RefreshData
+
+เมื่อมีคำสั่งนี้มา ให้ทำการส่งข้อมูลของตัวเอง อัตเดตขึ้น kafka
+
+    Action: REFRESHDATA
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| appKey     | string    | appKey  |
+| serviceKey     | string    | serviceKey  |
+
+---
+
+### User
+consume ข้อมูล User
+    
+    topic: sync-user
+
+### ACTION
+
+#### Add User
+รับข้อมูล User เมื่อมีการสร้าง User ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Update User
+
+รับข้อมูล User เมื่อมีการ update User
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Delete User
+
+รับข้อมูล User เมื่อมีการ DELETE User 
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+
 ---
 
 <br>
 <br>
 
 ## Kafka produce Reference
+ 
+produc ข้อมูล authentication Service 
+    
+    topic: sync-auth
+
+### ACTION
+#### RefreshData
+
+ส่งข้อมูลของตัวเองขึ้น Kafka เมื่อมีการร้องขอข้อมูลเข้ามา โดยส่งข้อมูลกลับไปตาม Service ที่ส่ง publicKey ของตัวเองมา
+
+    Action: REFRESHDATA
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| secretKey     | string    | appKey  |
 ---
 
 
-### ACTION
