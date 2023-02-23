@@ -4,7 +4,9 @@ nav:
   - Gumon cli: gumoncli.md
   - Core Service: coreService.md
   - Application Service: applicationService.md
+  - Authentication Service: authenticationService.md
   - User Service: userService.md
-  - สร้าง Service ใหม่: userService.md
+  - Label Service: labelService.md
+  - สร้าง Service ใหม่: createService.md
 theme:
   name: material
