@@ -7,6 +7,7 @@ nav:
   - Authentication Service: authenticationService.md
   - User Service: userService.md
   - Label Service: labelService.md
+  - Notificatoin Service: notificationService.md
   - สร้าง Service ใหม่: createService.md
 theme:
   name: material
