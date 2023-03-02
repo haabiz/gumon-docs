@@ -1,13 +1,8 @@
-# Label Service
+# notification Service
 
-Service สำหรับจัดการข้อมูล label ต่างๆ ซึ้งมีทั้ง
+Service สำหรับจัดการเกี่ยว notification ต่างๆโดยใช้วิธีการ subscription ของ GraphQL
 
-1. Organization
-2. Business Unit
-3. Position
-4. Role
-5. Custom
- 
+
 <br>
 
 - [API Reference](#api-reference)
@@ -27,15 +22,79 @@ Service สำหรับจัดการข้อมูล label ต่า�
 
 เป็น API ที่ใช้สำหรับการ Query ข้อมูลออกมา ไม่มีการแก้ไข Data
 
+#### Get Notification
+
+API สำหรับเรียกดูข้อมูล notification โดย Api นี้จะเป็นแบบ realtime API หากมีข้อมูลสร้างขึ้นมาใหม่ Api นี้จะนำข้อมูลนั้นออกมาแสดงโดยอัตโนมัติ
+
+    API name : getNotification
+
+Input Fields
+
+Response : notificationSchema[]
+
+notificationSchema
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+
+#### Get Notification By ID
+
+API สำหรับเรียกดูข้อมูล notification ตาม ID ที่รับมา
+
+    API name : getNotificationByID
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+
+Response : notificationSchema
+
+notificationSchema
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+
 ---
 
 ### Mutation
 
 เป็น API ที่ใช้สำหรับการแก้ไขข้อมูล
 
----
+#### Create Notification
 
-## CLI Reference
+API สำหรับการสร้าง notification หลังจากการบันทึกข้อมูล จะทำการส่งข้อมูลไปยัง TOPIC ที่กำหนดไว้ตามฟังก์ชันของ subscription
+
+    API name : createNotification
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+
+Response : notificationSchema
+
+notificationSchema
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+
+---
 
 ## kafka consum Reference
 
@@ -99,6 +158,26 @@ consum ข้อมูล application
 | ------  | ------    | ------       |
 | _id     | string    | id ที่ใช้อ้างอิง  |
 | appKey     | string    | appKey  |
+
+---
+
+### Notification
+consum ข้อมูลที่ต้องการใช้งาน noification
+    
+    topic: notification
+
+---
+#### Notification
+
+เมื่อมีคำสั่งนี้มา ให้ทำการสร้างข้อมูล notification โดยไม่จำเป็นต้องผ่าน API "createNotification"
+
+    Action: CREATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+| type     | ENUM(NOTIFICATION_TYPE) | [NOMAL, EMAIL, SMS] ประเภท notification ที่ต้องการส่ง
 
 ---
 
