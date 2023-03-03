@@ -5,7 +5,7 @@ Service สำหรับจัดการข้อมูล User ทั้ง
 - [API Reference](#api-reference)
 - [CLI Reference](#cli-reference)
 - [kafka consum Reference](#kafka-consum-reference)
-- [kafka produc Reference](#kafka-produc-reference)
+- [kafka produce Reference](#kafka-produce-reference)
 
 ---
 
@@ -515,11 +515,11 @@ consum ข้อมูล application
 
 ---
 
-## Kafka Produc Reference
+## Kafka Produce Reference
 
 ### User
 
-produc ข้อมูล user
+produce ข้อมูล user
 
     topic: sync-user
 
