@@ -205,60 +205,8 @@
 
 
 
-## User Policy
 
----
-เป็นระบบที่เอาไว้จัดการเครื่อง สิทธิ และ Permission ในระบบ
-โดยที่ ACL service จะเป็น service ที่จัดการ Permission แล้ว sync User Policy (ได้แรงบันดาใจจาก AWS)ที่เป็นของพร้อมใช้มา
-
-ข้อมูล Permission ที่ต้องส่งให้ ACL service ผ่าน kafka ดังนี้
-
-    topic: sync-permission
-
-โดยข้อมูลเป็นดังนี้
-
-| key     |   Type    |  คำอธิบาย     |
-| ------  | ------    | ------       |
-| serviceKey     | string    | serviceKey ของ service |
-| permissions     | Array< permissionSchema >    | array ของ permission ที่มีใน service ทั้งหมด |
-
-โดยที่ permissionSchema
-
-| key     |   Type    |  คำอธิบาย     |
-| ------  | ------    | ------       |
-| key     | string    | key ของ permission ห้ามซ้ำ |
-| name    | string    | key ของ permission |
-| description    | string    | description ของ permission |
-
-ซึ้้งเมื่อ ทำการส่ง sync-permission ไปแล้ว ACL service จะทำการ gen user Policy ของ user มาในรูปแบบ 
-
-    policyKey: userId + ':' + LABEL + ':' +permissionKey
-
-โดยจะส่งผ่าน kafka ดังนี้
-
-    topic: sync-user-policy
-
-โดยข้อมูลเป็นดังนี้
-
-| key     |   Type    |  คำอธิบาย     |
-| ------  | ------    | ------       |
-| permissionKey     | string    | permissionKey ใช้สำหรับการจัดการเรื่องเพิ่มลบ permission |
-| policyKey     | string    | เป็น Key ที่ตรงตามรูปแบบ ใช้ในการค้นหา |
-| userId     | string    | userId ใช้ในการจัดการเพิ่มลบข้อมูล user  |
-
-และมี action ดังนี้
-
-| actionKey     |   ข้อมูลที่เพิ่มไปใน header (ถ้ามี)    |  คำอธิบาย     |
-| ------  | ------    | ------       |
-| ADD     |     | ใช้เพิ่ม data ตามที่ระบุ |
-| REMOVE     |     | ใช้ลบ policyKey ตามที่ระบุ |
-| REMOVE-PERMSSION    |  permissionKey: string   | ลบ user Policy ทั้งหมดที่มี permissionKey ตามที่ระบุ |
-| REMOVE-USER    |  userId: string   | ลบ user Policy ทั้งหมดที่มี userId ตามที่ระบุ |
-เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
-โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
-
-
-### Kafka Sync User
+## Kafka Sync User
 consume ข้อมูล User
     
     topic: sync-user
@@ -317,7 +265,7 @@ consume ข้อมูล User
 <br>
 <br>
 
-### Kafka Sync Label
+## Kafka Sync Label
 consume ข้อมูล Label
     
     topic: sync-label
@@ -370,3 +318,57 @@ consume ข้อมูล Label
 
 <br>
 <br>
+
+## User Policy
+
+---
+เป็นระบบที่เอาไว้จัดการเครื่อง สิทธิ และ Permission ในระบบ
+โดยที่ ACL service จะเป็น service ที่จัดการ Permission แล้ว sync User Policy (ได้แรงบันดาใจจาก AWS)ที่เป็นของพร้อมใช้มา
+
+ข้อมูล Permission ที่ต้องส่งให้ ACL service ผ่าน kafka ดังนี้
+
+    topic: sync-permission
+
+โดยข้อมูลเป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| serviceKey     | string    | serviceKey ของ service |
+| permissions     | Array< permissionSchema >    | array ของ permission ที่มีใน service ทั้งหมด |
+
+โดยที่ permissionSchema
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| key     | string    | key ของ permission ห้ามซ้ำ |
+| name    | string    | key ของ permission |
+| description    | string    | description ของ permission |
+
+ซึ้้งเมื่อ ทำการส่ง sync-permission ไปแล้ว ACL service จะทำการ gen user Policy ของ user มาในรูปแบบ 
+
+    policyKey: userId + ':' + LABEL + ':' +permissionKey
+
+โดยจะส่งผ่าน kafka ดังนี้
+
+    topic: sync-user-policy
+
+โดยข้อมูลเป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| permissionKey     | string    | permissionKey ใช้สำหรับการจัดการเรื่องเพิ่มลบ permission |
+| policyKey     | string    | เป็น Key ที่ตรงตามรูปแบบ ใช้ในการค้นหา |
+| userId     | string    | userId ใช้ในการจัดการเพิ่มลบข้อมูล user  |
+
+และมี action ดังนี้
+
+| actionKey     |   ข้อมูลที่เพิ่มไปใน header (ถ้ามี)    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| ADD     |     | ใช้เพิ่ม data ตามที่ระบุ |
+| REMOVE     |     | ใช้ลบ policyKey ตามที่ระบุ |
+| REMOVE-PERMSSION    |  permissionKey: string   | ลบ user Policy ทั้งหมดที่มี permissionKey ตามที่ระบุ |
+| REMOVE-USER    |  userId: string   | ลบ user Policy ทั้งหมดที่มี userId ตามที่ระบุ |
+เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
+โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
+
+
