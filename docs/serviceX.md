@@ -7,8 +7,8 @@
 2. [Refresh Data](#refresh-data)
 3. [ระบบจัดการและตรวจสอบ Certificate System Key ](#certificate-system-key)
 4. [ระบบจัดการและตรวจสอบ Certificate App Key ](#certificate-app-key)
-5. [ระบบHealthCheck](#kafka-produc-reference)
-6. [Sync User](#api-reference)
+5. [ระบบHealthCheck](#kafka-produce-reference)
+6. [Sync User](#kafka-consume-user)
 7. [Sync Label](#api-reference)
 8. [ระบบ UserPolicy และ Permission](#api-reference)
 
@@ -85,7 +85,7 @@
 | _id     | string    | id ที่ใช้อ้างอิง  |
 | appKey     | string    | appKey  |
 
-ให้ทำการ ส่งข้อมูลตัวเอง ที่จำเป็นต้อง Produc ขึ้น kafka ใหม่ทั้งหมดใน app นั้น
+ให้ทำการ ส่งข้อมูลตัวเอง ที่จำเป็นต้อง Produce ขึ้น kafka ใหม่ทั้งหมดใน app นั้น
 
 
 ## Certificate System Key

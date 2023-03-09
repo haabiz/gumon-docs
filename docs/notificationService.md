@@ -7,8 +7,8 @@ Service สำหรับจัดการเกี่ยว notification ต�
 
 - [API Reference](#api-reference)
 - [CLI Reference](#cli-reference)
-- [kafka consum Reference](#kafka-consum-reference)
-- [kafka produc Reference](#kafka-produc-reference)
+- [kafka consume Reference](#kafka-consume-reference)
+- [kafka produce Reference](#kafka-produce-reference)
 
 ---
 
@@ -96,10 +96,10 @@ notificationSchema
 
 ---
 
-## kafka consum Reference
+## kafka consume Reference
 
 ### Application
-consum ข้อมูล application
+consume ข้อมูล application
     
     topic: sync-application
 
@@ -162,7 +162,7 @@ consum ข้อมูล application
 ---
 
 ### Notification
-consum ข้อมูลที่ต้องการใช้งาน noification
+consume ข้อมูลที่ต้องการใช้งาน noification
     
     topic: notification
 
@@ -181,4 +181,4 @@ consum ข้อมูลที่ต้องการใช้งาน noific
 
 ---
 
-## Kafka Produc Reference
+## Kafka Produce Reference

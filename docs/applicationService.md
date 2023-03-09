@@ -281,7 +281,7 @@ appKey : [application Key]
 ## Kafka produce Reference
 ---
 
-produc ข้อมูล application 
+produce ข้อมูล application 
     
     topic: sync-application
 

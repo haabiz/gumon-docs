@@ -4,7 +4,7 @@ Service สำหรับจัดการข้อมูล User ทั้ง
 
 - [API Reference](#api-reference)
 - [CLI Reference](#cli-reference)
-- [kafka consum Reference](#kafka-consum-reference)
+- [kafka consume Reference](#kafka-consume-reference)
 - [kafka produce Reference](#kafka-produce-reference)
 
 ---
@@ -450,10 +450,10 @@ PhoneSchema
 
 ---
 
-## kafka consum Reference
+## kafka consume Reference
 
 ### Application
-consum ข้อมูล application
+consume ข้อมูล application
     
     topic: sync-application
 
