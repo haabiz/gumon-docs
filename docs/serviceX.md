@@ -92,6 +92,65 @@
 ---
 
 เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
-โดยที่ ตัว service จะเก็บpublicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
+โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
 
-1. ยิง API "Register Service to Core Syetem" ไปที่ core service
+
+1. ยิง API "Register Service to Core Syetem" ไปที่ core service โดยจะส่งข้อมูลดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| serviceKey     | string    | เป็น key ของ service  |
+| serviceName     | string    | ตั้งชื่อเพื่อใช้ในการแสดงผล  |
+
+โดยจะได้ผลลัพธ์เป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| serviceKey     | string    | เป็น key ของ service  |
+| serviceName     | string    | ตั้งชื่อเพื่อใช้ในการแสดงผล  |
+| id     | ID    | credential Id ที่ใช้ในการอ้างอิง  |
+| publicKey     | string    | publicKey ที่เอาไว้ใช้เข้ารหัสเพื่อคุยกับ core service (key ที่เอาไว้เข้ารหัส)  |
+| privateKey     | string    | privateKey ที่เอาไว้ถอดรหัส เวลาคุยข้อมูลกับ core service (key เอาไว้ถอดรหัส ห้ามหลุด!!!)  |
+
+2. เดพ เอา id และ publicKey , privateKey ไปใส่ใน env ที่จะทำงาน และ run service
+3. service เมื่อ run ให้ทำการเข้ารหัส credential Id ด้วย publicKey (เช็กว่า publicKey ถูกต้อง) ขึ้น kafka ดังนี้
+
+    topic: register-service
+
+ข้อมูล เป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| id     | ID    | credential Id ที่ใช้ในการอ้างอิง  |
+| serviceKey     | string    | เป็น key ของ service  |
+| encryptdata     | string    | เข้ารหัส id ด้วย publicKey |
+
+4. core service ทำการรับ register-service แล้วเริ่มทำการ Haud Check เพื่อเช็กว่า ระบบสามารถถอดรหัสข้อมูลได้ถูกต้อง 
+5. core service ทำการส่ง ข้อมูลขึ้น kafka ดังนี้
+
+    topic: haud-check
+
+ข้อมูล เป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| id     | ID    | credential Id ที่ใช้ในการอ้างอิง  |
+| serviceKey     | string    | เป็น key ของ service  |
+| refId     | ID    | เป็น Id ที่ core gen ขึ้นเพื่อใช้อ้างอิง การ haud-check|
+| encryptData     | string    | เข้ารหัส refId ด้วย publicKey |
+
+6. service รับ kafka topic: haud-check มาแล้ว ส่งข้อมูล ให้ทำการถอด encryptdata ด้วย privateKey แล้วนำค่าที่ได้ใส่ resultData แล้ว ทำการส่ง ข้อมูลขึ้น kafka ดังนี้
+
+    topic: haud-check-result
+
+ข้อมูล เป็นดังนี้
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| id     | ID    | credential Id ที่ใช้ในการอ้างอิง  |
+| serviceKey     | string    | เป็น key ของ service  |
+| refId     | ID    | เป็น Id ที่ core gen ขึ้นเพื่อใช้อ้างอิง การ haud-check|
+| encryptData     | string    | เป็นข้อมูลเข้ารหัสที่ส่งมาจาก core |
+| resultData     | string    | ผลลัพธ์การถอดรหัส ถ้าไม่สามารถถอดได้ ใส่ตอบกลับเป็น "" |
+
+7. core service รับผลลัพธ์ topic: haud-check-result แล้วเทียบค่า refId กับ resultData แล้วsave ผลลัพธ์ลง database
