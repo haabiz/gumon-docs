@@ -8,8 +8,8 @@
 3. [ระบบจัดการและตรวจสอบ Certificate System Key ](#certificate-system-key)
 4. [ระบบจัดการและตรวจสอบ Certificate App Key ](#certificate-app-key)
 5. [ระบบHealthCheck](#health-check)
-6. [Sync User](#api-reference)
-7. [Sync Label](#api-reference)
+6. [Sync User](#kafka-sync-user)
+7. [Sync Label](#kafka-sync-label)
 8. [ระบบ UserPolicy และ Permission](#user-policy)
 
 ---
@@ -85,7 +85,7 @@
 | _id     | string    | id ที่ใช้อ้างอิง  |
 | appKey     | string    | appKey  |
 
-ให้ทำการ ส่งข้อมูลตัวเอง ที่จำเป็นต้อง Produc ขึ้น kafka ใหม่ทั้งหมดใน app นั้น
+ให้ทำการ ส่งข้อมูลตัวเอง ที่จำเป็นต้อง Produce ขึ้น kafka ใหม่ทั้งหมดใน app นั้น
 
 
 ## Certificate System Key
@@ -254,3 +254,119 @@
 | REMOVE     |     | ใช้ลบ policyKey ตามที่ระบุ |
 | REMOVE-PERMSSION    |  permissionKey: string   | ลบ user Policy ทั้งหมดที่มี permissionKey ตามที่ระบุ |
 | REMOVE-USER    |  userId: string   | ลบ user Policy ทั้งหมดที่มี userId ตามที่ระบุ |
+เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
+โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
+
+
+### Kafka Sync User
+consume ข้อมูล User
+    
+    topic: sync-user
+
+### ACTION
+
+#### Add User
+รับข้อมูล User เมื่อมีการสร้าง User ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Update User
+
+รับข้อมูล User เมื่อมีการ update User
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Delete User
+
+รับข้อมูล User เมื่อมีการ DELETE User 
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+
+---
+
+<br>
+<br>
+
+### Kafka Sync Label
+consume ข้อมูล Label
+    
+    topic: sync-label
+
+### ACTION
+
+#### Add Label
+รับข้อมูล Label เมื่อมีการสร้าง Label ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+#### Update Label
+
+รับข้อมูล Label เมื่อมีการ update Label
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+#### Delete Label
+
+รับข้อมูล Label เมื่อมีการลบ Label
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+<br>
+<br>

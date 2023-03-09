@@ -12,8 +12,8 @@ Service สำหรับจัดการข้อมูล label ต่า�
 
 - [API Reference](#api-reference)
 - [CLI Reference](#cli-reference)
-- [kafka consum Reference](#kafka-consum-reference)
-- [kafka produc Reference](#kafka-produc-reference)
+- [kafka consume Reference](#kafka-consume-reference)
+- [kafka produce Reference](#kafka-produce-reference)
 
 ---
 
@@ -153,10 +153,10 @@ DeleteStatus
 
 ---
 
-## kafka consum Reference
+## kafka consume Reference
 
 ### Application
-consum ข้อมูล application
+consume ข้อมูล application
     
     topic: sync-application
 
@@ -218,7 +218,7 @@ consum ข้อมูล application
 
 ---
 
-## Kafka Produc Reference
+## Kafka Produce Reference
 
 ### Labe
 
