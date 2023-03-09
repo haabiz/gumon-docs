@@ -9,5 +9,6 @@ nav:
   - Label Service: labelService.md
   - Notificatoin Service: notificationService.md
   - สร้าง Service ใหม่: createService.md
+  - serviceX: serviceX.md
 theme:
   name: material
