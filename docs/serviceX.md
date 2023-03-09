@@ -8,8 +8,8 @@
 3. [ระบบจัดการและตรวจสอบ Certificate System Key ](#certificate-system-key)
 4. [ระบบจัดการและตรวจสอบ Certificate App Key ](#certificate-app-key)
 5. [ระบบHealthCheck](#kafka-produce-reference)
-6. [Sync User](#kafka-consume-user)
-7. [Sync Label](#api-reference)
+6. [Sync User](#kafka-sync-user)
+7. [Sync Label](#kafka-sync-label)
 8. [ระบบ UserPolicy และ Permission](#api-reference)
 
 ---
@@ -161,3 +161,63 @@
 
 เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
 โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
+
+
+### Kafka Sync User
+consume ข้อมูล User
+    
+    topic: sync-user
+
+### ACTION
+
+#### Add User
+รับข้อมูล User เมื่อมีการสร้าง User ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Update User
+
+รับข้อมูล User เมื่อมีการ update User
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| email     | EmailSchema    | email  |
+| phone     | PhoneSchema    | phone  |
+| username     | string    | username  |
+| facebookId     | string    | facebookId  |
+| googleId     | string    | googleId  |
+| lineId     | string    | lineId  |
+| appleId     | string    | appleId  |
+
+---
+
+#### Delete User
+
+รับข้อมูล User เมื่อมีการ DELETE User 
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+
+---
+
+<br>
+<br>
