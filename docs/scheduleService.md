@@ -6,8 +6,8 @@ Service สำหรับจัดการตั้งเวลาในกา
 <br>
 
 - [API Reference](#api-reference)
-- [kafka consum Reference](#kafka-consum-reference)
-- [kafka produc Reference](#kafka-produc-reference)
+- [kafka consume Reference](#kafka-consume-reference)
+- [kafka produce Reference](#kafka-produce-reference)
 
 ---
 

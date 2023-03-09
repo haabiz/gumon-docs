@@ -295,7 +295,7 @@ consume ข้อมูล User
 
 ## Kafka produce Reference
  
-produc ข้อมูล authentication Service 
+produce ข้อมูล authentication Service 
     
     topic: sync-auth
 
