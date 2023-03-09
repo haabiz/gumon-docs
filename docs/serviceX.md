@@ -154,3 +154,10 @@
 | resultData     | string    | ผลลัพธ์การถอดรหัส ถ้าไม่สามารถถอดได้ ใส่ตอบกลับเป็น "" |
 
 7. core service รับผลลัพธ์ topic: haud-check-result แล้วเทียบค่า refId กับ resultData แล้วsave ผลลัพธ์ลง database
+
+
+## Certificate App Key
+---
+
+เป็น ระบบ ในการ แลก Key แบบ RSA แบบ SHA256
+โดยที่ ตัว service จะเก็บ publicKey , privateKey ที่ไว้ใช้คุยกับ core service ไว้ โดยที่มีกระบวนการดังนี้
