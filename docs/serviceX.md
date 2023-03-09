@@ -221,3 +221,57 @@ consume ข้อมูล User
 
 <br>
 <br>
+
+### Kafka Sync Label
+consume ข้อมูล Label
+    
+    topic: sync-label
+
+### ACTION
+
+#### Add Label
+รับข้อมูล Label เมื่อมีการสร้าง Label ใหม่ขึ้นมาในระบบ
+
+    Action: ADD
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+#### Update Label
+
+รับข้อมูล Label เมื่อมีการ update Label
+
+    Action: UPDATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+#### Delete Label
+
+รับข้อมูล Label เมื่อมีการลบ Label
+
+    Action: DELETE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| _id     | string    | id ที่ใช้อ้างอิง  |
+| appKey     | string    | appKey  |
+| name     | String    | ชื่อ label ที่สร้าง  |
+| description     | String    | คำอธิบาย  |
+
+---
+
+<br>
+<br>
