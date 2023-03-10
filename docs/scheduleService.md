@@ -249,6 +249,7 @@ consume ข้อมูลที่ service อื่นส่งมา
 ---
 
 consume ข้อมูลที่ service ที่รับ schedule แล้วหลังจากจบกระบวนการทำงานแล้วจะส่ง result กลับมาที่ schedule
+และทำการสร้างตัวแปร receiveTime2 เพื่อเก็บ timestamp ณ เวลาที่ได้รับข้อมูลมา แล้วทำการบันทึกลงใน database
     
     topic: schedule_alarm_result
 
