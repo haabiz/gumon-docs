@@ -220,7 +220,7 @@ consume ข้อมูล application
 
 ## Kafka Produce Reference
 
-### Labe
+### Label
 
 produce ข้อมูล label
 
