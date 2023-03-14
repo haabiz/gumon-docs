@@ -5,6 +5,7 @@ nav:
   - Core Service: coreService.md
   - Application Service: applicationService.md
   - Authentication Service: authenticationService.md
+  - ACL Service: aclService.md
   - User Service: userService.md
   - Label Service: labelService.md
   - Notificatoin Service: notificationService.md
