@@ -19,23 +19,6 @@ Service สำหรับจัดการระบบ Authorization ต่า
 
 เป็น API ที่ใช้สำหรับการ Query ข้อมูลออกมา
 
-#### Get Application
-
-API สำหรับการเรียกข้อมูล Applications
-
-    API name : getApplications
-
-Response : Applications[]
-
-Application
-| key     |   Type    |  คำอธิบาย     |
-| ------  | ------    | ------       |
-| _id     | string    | id ที่ใช้อ้างอิง  |
-| appKey     | string    | appKey  |
-| name     | string    | ชื่อ app  |
-
----
-
 ### Mutation
 
 เป็น API ที่ใช้สำหรับการแก้ไขข้อมูล
@@ -209,6 +192,67 @@ LOGINED
 | token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
 | name     | string    | ชื่อ app  |
+
+#### Change Password
+
+API สำหรับการเปลี่ยน password
+
+    API name : changePassword
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| password | string | รหัสผ่านปัจจุบัน |
+| newPassword | string | รหัสผ่านใหม่ |
+
+Response: RESET_STATUS
+
+RESET_STATUS
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, FAILED  |
+---
+
+#### Forgot Password
+
+API เกี่ยวกับการลืมรหัสผ่าน เพื่อร้องขอการเปลี่ยนรหัส
+
+    API name : forgotPassword
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| email | string | email ในระบบสำหรับขอเปลี่ยนรหัสผ่าน |
+
+Response: RESET_STATUS
+
+RESET_STATUS
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, FAILED  |
+---
+
+#### Reset Password
+
+API สำหรับเปลี่ยนรหัสผ่านหลังจากได้ Token ใน email ที่ถูกส่งไปผ่าน API:[forgotPassword](#forgot-password)
+
+    API name : resetPassword
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| token | string | token ที่ได้มาจาก API:[forgotPassword](#forgot-password) |
+| newPassword | string | รหัสผ่านใหม่ |
+
+Response: RESET_STATUS
+
+RESET_STATUS
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| status     | ENUM    | SUCCESS, FAILED  |
 ---
 
 <br>
@@ -312,3 +356,22 @@ produce ข้อมูล authentication Service
 ---
 
 
+### Notification
+product ข้อมูลที่ต้องการใช้งาน noification (ex. forgot password)
+    
+    topic: notification
+
+---
+#### Notification
+
+เมื่อมีคำสั่งนี้มา ให้ทำการสร้างข้อมูล notification โดยไม่จำเป็นต้องผ่าน API "createNotification"
+
+    Action: CREATE
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| topic     | String    | หัวข้อ notification  |
+| content     | String    | เนื้อหา  |
+| type     | ENUM(NOTIFICATION_TYPE) | [NOMAL, EMAIL, SMS] ประเภท notification ที่ต้องการส่ง |
+
+---

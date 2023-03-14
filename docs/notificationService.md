@@ -177,7 +177,7 @@ consume ข้อมูลที่ต้องการใช้งาน noifi
 | ------  | ------    | ------       |
 | topic     | String    | หัวข้อ notification  |
 | content     | String    | เนื้อหา  |
-| type     | ENUM(NOTIFICATION_TYPE) | [NOMAL, EMAIL, SMS] ประเภท notification ที่ต้องการส่ง
+| type     | ENUM(NOTIFICATION_TYPE) | [NOMAL, EMAIL, SMS] ประเภท notification ที่ต้องการส่ง |
 
 ---
 
