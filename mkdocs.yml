@@ -9,6 +9,8 @@ nav:
   - User Service: userService.md
   - Label Service: labelService.md
   - Notificatoin Service: notificationService.md
+  - Schedule Service: scheduleService.md
+  - Storage Service: storageService.md
   - สร้าง Service ใหม่: createService.md
   - serviceX: serviceX.md
 theme:
