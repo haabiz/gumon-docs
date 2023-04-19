@@ -98,10 +98,34 @@ Input Fields
 Response: OTP_LOGINED
 
 OTP_LOGINED
+
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | otpToken     | string    | token จากทางผู้ให้บริการ OTP  |
 | expireDate     | Date    | วันหมดอายุของ token  |
+| user     | User    | ข้อมูลผู้ใช้งาน  |
+---
+
+#### Confirm OTP for Login
+
+API สำหรับการส่ง OTP เพื่อทำการ login ด้วย phone number
+
+    API name : confirmOTPforLogin
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| phoneNumber | string | เบอร์โทรศัพท์ |
+| otp | string | otp code |
+
+Response: OTP_LOGINED
+
+OTP_LOGINED
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
 ---
 
@@ -124,7 +148,7 @@ LOGINED
 | ------  | ------    | ------       |
 | token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
-| name     | string    | ชื่อ app  |
+| name     | string    | ชื่อ  |
 ---
 
 #### Login with Google
@@ -146,7 +170,7 @@ LOGINED
 | ------  | ------    | ------       |
 | token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
-| name     | string    | ชื่อ app  |
+| name     | string    | ชื่อ  |
 ---
 
 #### Login with Line
@@ -168,7 +192,7 @@ LOGINED
 | ------  | ------    | ------       |
 | token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
-| name     | string    | ชื่อ app  |
+| name     | string    | ชื่อ  |
 ---
 
 #### Login with appleID
@@ -191,7 +215,7 @@ LOGINED
 | ------  | ------    | ------       |
 | token     | Token    | ข้อมูล Token  |
 | user     | User    | ข้อมูลผู้ใช้งาน  |
-| name     | string    | ชื่อ app  |
+| name     | string    | ชื่อ  |
 
 #### Change Password
 
@@ -253,6 +277,27 @@ RESET_STATUS
 | key     |   Type    |  คำอธิบาย     |
 | ------  | ------    | ------       |
 | status     | ENUM    | SUCCESS, FAILED  |
+---
+
+#### Refresh Token
+
+API สำหรับร้องขอ token ใหม่เมื่อ accessToken หมดอายุ
+
+    API name : refreshtoken
+
+Input Fields
+
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| refreshToken | string | refreshToken ที่ได้รับตอน generate token |
+
+Response: RESET_STATUS
+
+RESET_STATUS
+| key     |   Type    |  คำอธิบาย     |
+| ------  | ------    | ------       |
+| accessToken | string | token สำหรับเข้าสู่ระบบ |
+| refreshToken | string | token สำหรับขอ accessToken ใหม่ |
 ---
 
 <br>
