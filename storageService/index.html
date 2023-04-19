@@ -1,0 +1,1516 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../scheduleService/">
+      
+      
+        <link rel="next" href="../createService/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Storage Service - Gumon Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#storage-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gumon Docs" class="md-header__button md-logo" aria-label="Gumon Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gumon Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Storage Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gumon Docs" class="md-nav__button md-logo" aria-label="Gumon Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gumon Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gumoncli/" class="md-nav__link">
+        Gumon cli
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coreService/" class="md-nav__link">
+        Core Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../applicationService/" class="md-nav__link">
+        Application Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authenticationService/" class="md-nav__link">
+        Authentication Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aclService/" class="md-nav__link">
+        ACL Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../userService/" class="md-nav__link">
+        User Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labelService/" class="md-nav__link">
+        Label Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notificationService/" class="md-nav__link">
+        Notificatoin Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduleService/" class="md-nav__link">
+        Schedule Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Storage Service
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Storage Service
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    API Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-storage" class="md-nav__link">
+    Get Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-storage-by-id" class="md-nav__link">
+    Get Storage By ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-object-signedurl" class="md-nav__link">
+    Get Object SignedURL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation" class="md-nav__link">
+    Mutation
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-object-signedurl" class="md-nav__link">
+    Put Object SignedURL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka-consume-reference" class="md-nav__link">
+    kafka consume Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="kafka consume Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+    <nav class="md-nav" aria-label="Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-application" class="md-nav__link">
+    Add Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-application" class="md-nav__link">
+    Update Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-application" class="md-nav__link">
+    Delete Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refreshdata" class="md-nav__link">
+    RefreshData
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shedule" class="md-nav__link">
+    shedule
+  </a>
+  
+    <nav class="md-nav" aria-label="shedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm-schedule" class="md-nav__link">
+    Alarm Schedule
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka-produce-reference" class="md-nav__link">
+    Kafka Produce Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="Kafka Produce Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-alarm-time" class="md-nav__link">
+    Set alarm time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-schedule" class="md-nav__link">
+    update schedule
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../createService/" class="md-nav__link">
+        สร้าง Service ใหม่
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serviceX/" class="md-nav__link">
+        serviceX
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    API Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-storage" class="md-nav__link">
+    Get Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-storage-by-id" class="md-nav__link">
+    Get Storage By ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-object-signedurl" class="md-nav__link">
+    Get Object SignedURL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation" class="md-nav__link">
+    Mutation
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-object-signedurl" class="md-nav__link">
+    Put Object SignedURL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka-consume-reference" class="md-nav__link">
+    kafka consume Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="kafka consume Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+    <nav class="md-nav" aria-label="Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-application" class="md-nav__link">
+    Add Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-application" class="md-nav__link">
+    Update Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-application" class="md-nav__link">
+    Delete Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refreshdata" class="md-nav__link">
+    RefreshData
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shedule" class="md-nav__link">
+    shedule
+  </a>
+  
+    <nav class="md-nav" aria-label="shedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm-schedule" class="md-nav__link">
+    Alarm Schedule
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka-produce-reference" class="md-nav__link">
+    Kafka Produce Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="Kafka Produce Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-alarm-time" class="md-nav__link">
+    Set alarm time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-schedule" class="md-nav__link">
+    update schedule
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="storage-service">Storage Service</h1>
+<p>Service สำหรับจัดการข้อมูล storage ต่างๆ ซึ้งมีทั้ง</p>
+<ol>
+<li>Organization</li>
+<li>Business Unit</li>
+<li>Position</li>
+<li>Role</li>
+<li>Custom</li>
+</ol>
+<p><br></p>
+<ul>
+<li><a href="#api-reference">API Reference</a></li>
+<li><a href="#cli-reference">CLI Reference</a></li>
+<li><a href="#kafka-consume-reference">kafka consume Reference</a></li>
+<li><a href="#kafka-produce-reference">kafka produce Reference</a></li>
+</ul>
+<hr />
+<p><br>
+<br></p>
+<h2 id="api-reference">API Reference</h2>
+<hr />
+<h3 id="query">Query</h3>
+<p>เป็น API ที่ใช้สำหรับการ Query ข้อมูลออกมา ไม่มีการแก้ไข Data</p>
+<h4 id="get-storage">Get Storage</h4>
+<p>API สำหรับการเรียกดูรายการข้อมูล storage</p>
+<pre><code>API name : getStorages
+</code></pre>
+<p>Response : storageSchema[]</p>
+<p>storageSchema</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>category ที่ต้องการเก็บข้อมูลใน S3</td>
+</tr>
+<tr>
+<td>signedUrl</td>
+<td>String</td>
+<td>URL ที่ได้ทำการ signed ที่ S3 เอาไว้ (ใช้ในการ upload ไฟล์ที่ได้ทำการ signed เอาไว้)</td>
+</tr>
+<tr>
+<td>publicUrl</td>
+<td>String</td>
+<td>url ของไฟล์ที่ทำการบันทึกไว้ที่ s3 (กรณี acl เป็น private จะไม่สามารถดูข้อมูลได้ หากต้องการดูข้อมูล ต้องเรียกใช้ api <a href="#get-object-signedurl">Get Object SignedURL</a>)</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>fileKey</td>
+<td>String</td>
+<td>key ของ ไฟล์ที่ได้จากการ signed ที่ s3</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>String</td>
+<td>id ของ user ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>int</td>
+<td>ระยะเวลาหมดอายุการ signed (max 604800 = 7 days)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>UNKNOW, SUCCESS, FAILED (สถานะในการ upload)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="get-storage-by-id">Get Storage By ID</h4>
+<p>API สำหรับการเรียกดูข้อมูล Storage โดยอ้างอิงจาก ID</p>
+<pre><code>API name : getStorageByID
+</code></pre>
+<p>Input Fields</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>String</td>
+<td>ID ของ storage</td>
+</tr>
+</tbody>
+</table>
+<p>Response : storageSchema</p>
+<p>storageSchema</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>category ที่ต้องการเก็บข้อมูลใน S3</td>
+</tr>
+<tr>
+<td>signedUrl</td>
+<td>String</td>
+<td>URL ที่ได้ทำการ signed ที่ S3 เอาไว้ (ใช้ในการ upload ไฟล์ที่ได้ทำการ signed เอาไว้)</td>
+</tr>
+<tr>
+<td>publicUrl</td>
+<td>String</td>
+<td>url ของไฟล์ที่ทำการบันทึกไว้ที่ s3 (กรณี acl เป็น private จะไม่สามารถดูข้อมูลได้ หากต้องการดูข้อมูล ต้องเรียกใช้ api <a href="#get-object-signedurl">Get Object SignedURL</a>)</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>fileKey</td>
+<td>String</td>
+<td>key ของ ไฟล์ที่ได้จากการ signed ที่ s3</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>String</td>
+<td>id ของ user ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>int</td>
+<td>ระยะเวลาหมดอายุการ signed (max 604800 = 7 days)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>UNKNOW, SUCCESS, FAILED (สถานะในการ upload)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="get-object-signedurl">Get Object SignedURL</h4>
+<p>API สำหรับการเรียกข้อมูล url ของไฟล์ที่ทำการ upload เอาไว้</p>
+<p>(กรณี acl เป็น PRIVATE หากต้องการเรียกข้อมูลไฟล์ จะต้องเรียกใช้ API นี้เพื่อรับ publicUrl เท่านั้น)</p>
+<pre><code>API name : getSignedUploadFille
+</code></pre>
+<p>Input Fields</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>category ที่ต้องการเก็บข้อมูลใน S3</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>String</td>
+<td>ประเภทของไฟล์</td>
+</tr>
+</tbody>
+</table>
+<p>Response : storageSchema</p>
+<p>storageSchema</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>signedUrl</td>
+<td>String</td>
+<td>URL ที่ได้ทำการ signed ที่ S3 เอาไว้ (ใช้ในการ upload ไฟล์ที่ได้ทำการ signed เอาไว้)</td>
+</tr>
+<tr>
+<td>publicUrl</td>
+<td>String</td>
+<td>url ของไฟล์ที่ทำการบันทึกไว้ที่ s3 (กรณี acl เป็น private จะไม่สามารถดูข้อมูลได้ หากต้องการดูข้อมูล ต้องเรียกใช้ api <a href="#get-object-signedurl">Get Object SignedURL</a>)</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>fileKey</td>
+<td>String</td>
+<td>key ของ ไฟล์ที่ได้จากการ signed ที่ s3</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>int</td>
+<td>ระยะเวลาหมดอายุการ signed (max 604800 = 7 days)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>UNKNOW, SUCCESS, FAILED (สถานะในการ upload)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><br></p>
+<h3 id="mutation">Mutation</h3>
+<p>เป็น API ที่ใช้สำหรับการแก้ไขข้อมูล</p>
+<h4 id="put-object-signedurl">Put Object SignedURL</h4>
+<p>API สำหรับการ signed ที่ S3 ก่อนที่จะทำการ upload ไฟล์ไปยัง url ที่ทำการ signed เอาไว้</p>
+<p>โดยเมื่อทำการ signed ที่ S3 เรียบร้อยแล้ว จะทำการบันทึกข้อมูลลง database โดยบันทึก status ว่า UNKNOW และส่งข้อมูลไปยัง schedule service เพื่อเช็คข้อมูลอีกครั้งตาม expired ว่าข้อมูลที่ได้ทำการ signed เอาไว้ได้ทำการ upload แล้วหรือยัง</p>
+<pre><code>API name : putSignedUploadFille
+</code></pre>
+<p>Input Fields</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>category ที่ต้องการเก็บข้อมูลใน S3</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>String</td>
+<td>ประเภทของไฟล์</td>
+</tr>
+</tbody>
+</table>
+<p>Response : storageSchema</p>
+<p>storageSchema</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>acl</td>
+<td>enum</td>
+<td>PRIVATE, PUBLIC (สิทธิ์ในการเข้าถึงข้อมูลของไฟล์)</td>
+</tr>
+<tr>
+<td>signedUrl</td>
+<td>String</td>
+<td>URL ที่ได้ทำการ signed ที่ S3 เอาไว้ (ใช้ในการ upload ไฟล์ที่ได้ทำการ signed เอาไว้)</td>
+</tr>
+<tr>
+<td>publicUrl</td>
+<td>String</td>
+<td>url ของไฟล์ที่ทำการบันทึกไว้ที่ s3 (กรณี acl เป็น private จะไม่สามารถดูข้อมูลได้ หากต้องการดูข้อมูล ต้องเรียกใช้ api <a href="#get-object-signedurl">Get Object SignedURL</a>)</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>String</td>
+<td>ชื่อของไฟล์ที่ทำการ upload</td>
+</tr>
+<tr>
+<td>fileKey</td>
+<td>String</td>
+<td>key ของ ไฟล์ที่ได้จากการ signed ที่ s3</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>int</td>
+<td>ระยะเวลาหมดอายุการ signed (max 604800 = 7 days)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>UNKNOW, SUCCESS, FAILED (สถานะในการ upload)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kafka-consume-reference">kafka consume Reference</h2>
+<h3 id="application">Application</h3>
+<p>consume ข้อมูล application</p>
+<pre><code>topic: sync-application
+</code></pre>
+<hr />
+<h4 id="add-application">Add Application</h4>
+<p>รับข้อมูล Application เมื่อมีการสร้าง Application ใหม่ขึ้นมาในระบบ</p>
+<pre><code>Action: ADD
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>ชื่อ app</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="update-application">Update Application</h4>
+<p>รับข้อมูล Application เมื่อมีการ update Application</p>
+<pre><code>Action: UPDATE
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>ชื่อ app</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="delete-application">Delete Application</h4>
+<p>รับข้อมูล Application เมื่อมีการ DELETE Application </p>
+<pre><code>Action: DELETE
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="refreshdata">RefreshData</h4>
+<p>เมื่อมีคำสั่งนี้มา ให้ทำการส่งข้อมูลของตัวเอง อัตเดตขึ้น kafka</p>
+<pre><code>Action: REFRESHDATA
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>string</td>
+<td>appKey</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="shedule">shedule</h3>
+<p>consume ข้อมูล schedule</p>
+<pre><code>topic: schedule_alarm
+</code></pre>
+<hr />
+<h4 id="alarm-schedule">Alarm Schedule</h4>
+<p>รับข้อมูล schedule เมื่่อถึงเวลาตามที่ตั้งไว้ใน schedule</p>
+<p>โดยเมื่อได้รับข้อมูลจาก schedule แล้วจะทำการนำ _id ที่ได้รับมาเช็คที่ database และนำข้อมูลนั้นตรวจสอบอีกทีที่ S3 หากข้อมูลทำการ upload เรียบร้อยแล้ว จะอัพเดต status เป็น SUCCESS แล้วบันทึกลงใน database แต่หากยังไม่มีการ upload จะทำการอัพเดต status เป็น FAILED</p>
+<pre><code>Action: UPDATE
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ของไฟล์ที่ทำการ signed ไว้</td>
+</tr>
+<tr>
+<td>sendTime</td>
+<td>Date</td>
+<td>timeStamp ในช่วงเวลาที่ส่งข้อมูลมาจาก schedule</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kafka-produce-reference">Kafka Produce Reference</h2>
+<h3 id="schedule">Schedule</h3>
+<p>produce เวลาที่ต้องการแจ้งเตือน</p>
+<pre><code>topic: schedule
+</code></pre>
+<hr />
+<h4 id="set-alarm-time">Set alarm time</h4>
+<p>ส่งข้อมูล storage เมื่อมีการ signed ที่ S3 โดยอิงเวลาแจ้งเตือนจากตัวแปร expired ที่เก็บไว้ใน database</p>
+<pre><code>Action: ADD
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>serviceKey</td>
+<td>string</td>
+<td>serviceKey ของ service ที่ส่งมา</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>คำอธิบาย</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>ENUM</td>
+<td>ONCE,EVERY</td>
+</tr>
+<tr>
+<td>every</td>
+<td>string</td>
+<td>รอบการแจ้งเตือน เช่น 1D, 2M, EVERY MONDAY *หากเลือก repeat เป็น every</td>
+</tr>
+</tbody>
+</table>
+<p>รายระเอียดในการตั้งเวลาแจ้งเตือน</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id จาก database ที่ได้หลักจากการ signed ที่ S3 เรียบร้อยแล้ว</td>
+</tr>
+<tr>
+<td>serviceKey</td>
+<td>string</td>
+<td>serviceKey</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>คำอธิบาย</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>ENUM</td>
+<td>ONCE</td>
+</tr>
+<tr>
+<td>every</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>produce ข้อมูลหลังจากจบกระบวนการทำงานแล้วจะส่ง result กลับไปยังที่ schedule service</p>
+<pre><code>topic: schedule_alarm_result
+</code></pre>
+<hr />
+<h4 id="update-schedule">update schedule</h4>
+<p>รับข้อมูลเวลา</p>
+<pre><code>Action: UPDATE
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>id ที่ใช้อ้างอิง</td>
+</tr>
+<tr>
+<td>sendTime</td>
+<td>Date</td>
+<td>timeStamp จากที่ schedule ส่งมาในตอนแรก</td>
+</tr>
+<tr>
+<td>receiveTime</td>
+<td>Date</td>
+<td>ช่วงเวลาที่่ข้อมูลมาถึง service</td>
+</tr>
+<tr>
+<td>sendTime2</td>
+<td>Date</td>
+<td>timeStamp ที่เริ่มส่งข้อมูลไปยัง schedule</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
