@@ -149,7 +149,7 @@ Response
 
 API สำหรับการสร้าง Service ใหม่ในระบบ โดยที่มันจะไปเรียกใช้ gumon CLI ในการดาวโหลดและ run Service นั้น
 
-    API name : ServiceRegistration
+    API name : registerService
 
 Input Fields
 
